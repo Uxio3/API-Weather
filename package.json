@@ -1,0 +1,24 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "App del tiempo usando API de tercero",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Uxio3/Weather-App.git"
+  },
+  "author": "Adrián Valdés",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Uxio3/Weather-App/issues"
+  },
+  "homepage": "https://github.com/Uxio3/Weather-App#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^4.22.1"
+  }
+}
