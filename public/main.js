@@ -9,8 +9,10 @@ const weather = document.getElementById("weather");
 async function getData(lat, lon) {
     
     try {
-        const response = await fetch(`http://localhost:3000/api/tiempo?lat=${lat}&lon=${lon}`);
+        const API_BASE_URL = 'https://api-weather-g5n7.onrender.com';
 
+        const response = await fetch(`${API_BASE_URL}/api/tiempo?lat=${lat}&lon=${lon}`);
+        
         if (!response.ok) {
             throw new Error('Error al obtener los datos del backend');
         }
