@@ -3,11 +3,19 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 app.use(cors());
 
 const API_KEY = process.env.API_KEY;
+// Sirve los archivos estáticos de la carpeta public
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Ruta raíz: devuelve index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+  });
 
 app.get('/api/tiempo', async (req, res) => {
     try {

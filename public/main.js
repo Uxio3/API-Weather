@@ -7,12 +7,14 @@ const weather = document.getElementById("weather");
 
 // Función para sacar los datos del tiempo
 async function getData(lat, lon) {
-    
+
     try {
-        const API_BASE_URL = 'https://api-weather-g5n7.onrender.com';
+        // Detecto si estoy en localhost o en producción
+        const API_BASE_URL =
+            window.location.hostname === 'localhost' ? 'http://localhost:3000' : '';
 
         const response = await fetch(`${API_BASE_URL}/api/tiempo?lat=${lat}&lon=${lon}`);
-        
+
         if (!response.ok) {
             throw new Error('Error al obtener los datos del backend');
         }
